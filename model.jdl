@@ -1,0 +1,74 @@
+
+entity Vehiculo {
+	numPlaca String required,
+    numPasajeros Integer,
+    motor String,
+    modelo String,
+    marca String,
+    numEjes Integer,
+    kilometraje Integer
+      
+}
+
+entity Ruta {
+  nombreRuta String,
+  ciudadInicio String,
+  ciudadFin String,
+  kilometraje Integer
+ }
+
+entity Conductor {   
+   nombre String,
+   apellido String,
+   numDocumento String,
+   tipoDocumento String,
+   email String,
+   telefono String
+
+}
+
+
+entity Proveedor{   
+   nit String,
+   razonSocial String,
+   direccion String,
+   telefono String,
+   horarioLaboral String
+
+}
+
+entity Municipio{
+codigo Integer,
+nombre String
+}
+
+
+entity Departamento{
+codigo Integer,
+nombre String
+}
+
+entity Agenda{
+fechaCita Instant required unique
+}
+
+entity RutaVehiculo{
+   feha Instant
+}
+
+
+
+
+// defining multiple OneToMany relationships with comments
+relationship ManyToOne {
+	  Agenda{vehiculo(numPlaca)} to Vehiculo,  
+    Municipio{departamento(nombre)} to  Departamento,
+     Proveedor{municipio(nombre)} to Municipio, 
+    Proveedor{departamento(nombre)} to Departamento,  
+   Agenda{proveedor(razonSocial)}  to  Proveedor,
+   Vehiculo{conductor(nombre)} to Conductor,
+      RutaVehiculo{vehiculo(numPlaca)} to Vehiculo,
+      RutaVehiculo{ruta(nombreRuta)} to Ruta
+    
+}
+

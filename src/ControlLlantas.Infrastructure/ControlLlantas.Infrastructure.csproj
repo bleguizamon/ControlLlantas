@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6</TargetFramework>
+        <RootNamespace>And.ControlLlantas.Infrastructure</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection"  />
+        <PackageReference Include="Serilog"  />
+        <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore"  />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite"  />
+        <PackageReference Include="Microsoft.EntityFrameworkCore"  />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.Tools"  />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ControlLlantas.Domain\ControlLlantas.Domain.csproj" />
+        <ProjectReference Include="..\ControlLlantas.Dto\ControlLlantas.Dto.csproj" />
+        <ProjectReference Include="..\ControlLlantas.Crosscutting\ControlLlantas.Crosscutting.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6</TargetFramework>
+        <RootNamespace>And.ControlLlantas.Domain.Services</RootNamespace>
+        <OutputType>Library</OutputType>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="JHipsterNet.Core"  />
+        <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection"  />
+        <PackageReference Include="LanguageExt.Core"  />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ControlLlantas.Infrastructure\ControlLlantas.Infrastructure.csproj" />
+        <ProjectReference Include="..\ControlLlantas.Domain\ControlLlantas.Domain.csproj" />
+        <ProjectReference Include="..\ControlLlantas.Crosscutting\ControlLlantas.Crosscutting.csproj" />
+    </ItemGroup>
+
+</Project>
